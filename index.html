@@ -1,1 +1,92 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEAMROHIT45OFFICAL Streaming</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.min.js"></script>
+<style>
+  body {
+      background-color: black;
+      color: white;
+      text-align: center;
+  }
+  #videoContainer {
+      width: 80%;
+      margin: auto;
+  }
+  video {
+      width: 100%;
+      max-height: 80vh;
+  }
+  #telegramButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 378px;
+      height: 50px;
+      background: linear-gradient(90deg, darkblue, #001f3f);
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 20px auto;
+      font-size: 18px;
+      font-weight: bold;
+  }
+</style>
+</head>
+<body>
 
+<h1>TEAMROHIT45OFFICAL Streaming</h1>
+
+<div id="videoContainer">
+  <video id="video" controls autoplay></video>
+</div>
+
+<script>
+  async function initShakaPlayer() {
+      if (!shaka.Player.isBrowserSupported()) {
+          console.error("Error: Your browser does not support Shaka Player.");
+          return;
+      }
+
+      const video = document.getElementById("video");
+      const player = new shaka.Player(video);
+
+      player.configure({
+          drm: {
+              clearKeys: {
+                  "ae26845bd33038a9c0774a0981007294": "63ac662dde310cfb4cc6f9b43b34196d"
+              }
+          }
+      });
+
+      try {
+          await player.load("https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd");
+          console.log("Video loaded successfully!");
+      } catch (error) {
+          console.error("Error loading video:", error);
+      }
+  }
+
+  document.addEventListener("DOMContentLoaded", initShakaPlayer);
+</script>
+
+<script>
+  if (confirm("Join Our Telegram Channel?")) { 
+      window.location.href = "https://t.me/+3aJFsq2EJLg4NzI1"; 
+  }
+</script>
+
+<div id="telegramButton" onclick="redirectToTelegram()">
+  Join Telegram
+</div>
+
+<script>
+  function redirectToTelegram() {
+      window.location.href = "https://t.me/+3aJFsq2EJLg4NzI1";
+  }
+</script>
+
+</body>
+</html>
